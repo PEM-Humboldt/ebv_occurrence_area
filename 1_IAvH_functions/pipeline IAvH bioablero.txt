@@ -1,0 +1,397 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "type": "io",
+      "position": {
+        "x": 1062,
+        "y": 449
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>6_stac_layer.yml"
+      }
+    },
+    {
+      "id": "1",
+      "type": "io",
+      "position": {
+        "x": 32.239485634744256,
+        "y": 199.17770315863254
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>1_rep_connect_bridge.yml"
+      }
+    },
+    {
+      "id": "2",
+      "type": "io",
+      "position": {
+        "x": 364.72897874600255,
+        "y": 104.16279248843551
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>2_check_collections.yml"
+      }
+    },
+    {
+      "id": "3",
+      "type": "io",
+      "position": {
+        "x": 569.5281483556089,
+        "y": 240.18659286229172
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>3_load_collections.yml"
+      }
+    },
+    {
+      "id": "4",
+      "type": "io",
+      "position": {
+        "x": 940.3978522045354,
+        "y": 130.31456776292737
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>4_check_layers.yml"
+      }
+    },
+    {
+      "id": "5",
+      "type": "io",
+      "position": {
+        "x": 970.9213580592684,
+        "y": 271.94370328878193
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>5_load_layer_collection.yml"
+      }
+    },
+    {
+      "id": "9",
+      "type": "constant",
+      "position": {
+        "x": -191.6165580654274,
+        "y": 167.4542540642311
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "text",
+        "value": "http://io.biodiversite-quebec.ca/stac/"
+      }
+    },
+    {
+      "id": "11",
+      "type": "constant",
+      "position": {
+        "x": -252.99160904024933,
+        "y": 241.76408817011603
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "text/plain",
+        "value": "default"
+      }
+    },
+    {
+      "id": "14",
+      "type": "io",
+      "position": {
+        "x": 857.3551648528905,
+        "y": 338.5218057930343
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>4_load_layer_collection.yml"
+      }
+    },
+    {
+      "id": "15",
+      "type": "constant",
+      "position": {
+        "x": 559.9136976104809,
+        "y": 316.5140014253556
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "text/plain",
+        "value": "list(colections_stac[[1]][1:2], colections_stac[[2]][c(1,3)])"
+      }
+    },
+    {
+      "id": "19",
+      "type": "io",
+      "position": {
+        "x": 802.4606973060739,
+        "y": 443.638871308215
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>5_stac_layer.yml"
+      }
+    },
+    {
+      "id": "20",
+      "type": "constant",
+      "position": {
+        "x": 488.6676865390807,
+        "y": 499.8848823796152
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "dir_polygon",
+        "value": "/scripts/inputs_IAvH/Amazonas.shp"
+      }
+    },
+    {
+      "id": "21",
+      "type": "constant",
+      "position": {
+        "x": 495.6754909067595,
+        "y": 540.7637411910742
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "resolution",
+        "value": 1000
+      }
+    },
+    {
+      "id": "22",
+      "type": "io",
+      "position": {
+        "x": 1177.3782309768849,
+        "y": 434.29513215131
+      },
+      "data": {
+        "descriptionFile": "1_IAvH_functions>01_pp.yml"
+      }
+    },
+    {
+      "id": "23",
+      "type": "constant",
+      "position": {
+        "x": 804.0188830846226,
+        "y": 627.193328392445
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "text",
+        "value": "/scripts/IAvH_inputs/wkt_polygon_test.txt"
+      }
+    },
+    {
+      "id": "24",
+      "type": "constant",
+      "position": {
+        "x": 778.3236004031342,
+        "y": 683.2557633338748
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "numeric",
+        "value": 3395
+      }
+    },
+    {
+      "id": "25",
+      "type": "constant",
+      "position": {
+        "x": 1085.4990251863842,
+        "y": 668.0721872039043
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "numeric",
+        "value": 1000
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "sourceHandle": "repository_stac",
+      "target": "2",
+      "targetHandle": "dir_stac",
+      "id": "reactflow__edge-1repository_stac-2dir_stac"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "repository_stac",
+      "target": "3",
+      "targetHandle": "dir_stac",
+      "id": "reactflow__edge-1repository_stac-3dir_stac"
+    },
+    {
+      "source": "2",
+      "sourceHandle": "check_collections",
+      "target": "3",
+      "targetHandle": "collection",
+      "id": "reactflow__edge-2check_collections-3collection"
+    },
+    {
+      "source": "3",
+      "sourceHandle": "load_collections",
+      "target": "4",
+      "targetHandle": "collection_object",
+      "id": "reactflow__edge-3load_collections-4collection_object"
+    },
+    {
+      "source": "4",
+      "sourceHandle": "layers_info",
+      "target": "5",
+      "targetHandle": "collection_layers",
+      "id": "reactflow__edge-4layers_info-5collection_layers"
+    },
+    {
+      "source": "3",
+      "sourceHandle": "load_collections",
+      "target": "5",
+      "targetHandle": "collection_object",
+      "id": "reactflow__edge-3load_collections-5collection_object"
+    },
+    {
+      "source": "5",
+      "sourceHandle": "collection_cube",
+      "target": "0",
+      "targetHandle": "collection_layers",
+      "id": "reactflow__edge-5collection_cube-0collection_layers"
+    },
+    {
+      "source": "9",
+      "sourceHandle": null,
+      "target": "1",
+      "targetHandle": "repository_url",
+      "id": "reactflow__edge-9-1repository_url"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "1",
+      "targetHandle": "folder_workflow",
+      "id": "reactflow__edge-11-1folder_workflow"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "repository_stac_txt",
+      "target": "2",
+      "targetHandle": "dir_stac",
+      "id": "reactflow__edge-1repository_stac_txt-2dir_stac"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "2",
+      "targetHandle": "folder_workflow",
+      "id": "reactflow__edge-11-2folder_workflow"
+    },
+    {
+      "source": "1",
+      "sourceHandle": "repository_stac_RData",
+      "target": "3",
+      "targetHandle": "dir_stac",
+      "id": "reactflow__edge-1repository_stac_RData-3dir_stac"
+    },
+    {
+      "source": "2",
+      "sourceHandle": "repository_collections_txt",
+      "target": "3",
+      "targetHandle": "name_collections",
+      "id": "reactflow__edge-2repository_collections_txt-3name_collections"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "3",
+      "targetHandle": "folder_workflow",
+      "id": "reactflow__edge-11-3folder_workflow"
+    },
+    {
+      "source": "15",
+      "sourceHandle": null,
+      "target": "14",
+      "targetHandle": "collection_layers",
+      "id": "reactflow__edge-15-14collection_layers"
+    },
+    {
+      "source": "3",
+      "sourceHandle": "repository_collections_txt",
+      "target": "14",
+      "targetHandle": "collection_object",
+      "id": "reactflow__edge-3repository_collections_txt-14collection_object"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "14",
+      "targetHandle": "folder_workflow",
+      "id": "reactflow__edge-11-14folder_workflow"
+    },
+    {
+      "source": "14",
+      "sourceHandle": "stac_colections_layers_RData",
+      "target": "19",
+      "targetHandle": "collection_layers",
+      "id": "reactflow__edge-14stac_colections_layers_RData-19collection_layers"
+    },
+    {
+      "source": "20",
+      "sourceHandle": null,
+      "target": "19",
+      "targetHandle": "dir_polygon",
+      "id": "reactflow__edge-20-19dir_polygon"
+    },
+    {
+      "source": "21",
+      "sourceHandle": null,
+      "target": "19",
+      "targetHandle": "resolution",
+      "id": "reactflow__edge-21-19resolution"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "19",
+      "targetHandle": "folder_workflow",
+      "id": "reactflow__edge-11-19folder_workflow"
+    },
+    {
+      "source": "23",
+      "sourceHandle": null,
+      "target": "22",
+      "targetHandle": "dir_wkt_polygon",
+      "id": "reactflow__edge-23-22dir_wkt_polygon"
+    },
+    {
+      "source": "24",
+      "sourceHandle": null,
+      "target": "22",
+      "targetHandle": "epsg_polygon",
+      "id": "reactflow__edge-24-22epsg_polygon"
+    },
+    {
+      "source": "14",
+      "sourceHandle": "stac_colections_layers_RData",
+      "target": "22",
+      "targetHandle": "dir_colection",
+      "id": "reactflow__edge-14stac_colections_layers_RData-22dir_colection"
+    },
+    {
+      "source": "25",
+      "sourceHandle": null,
+      "target": "22",
+      "targetHandle": "resolution",
+      "id": "reactflow__edge-25-22resolution"
+    },
+    {
+      "source": "11",
+      "sourceHandle": null,
+      "target": "22",
+      "targetHandle": "folder_output",
+      "id": "reactflow__edge-11-22folder_output"
+    }
+  ],
+  "viewport": {
+    "x": 251.94255215755913,
+    "y": 62.16159581649322,
+    "zoom": 0.8561882845464566
+  },
+  "inputs": {}
+}
