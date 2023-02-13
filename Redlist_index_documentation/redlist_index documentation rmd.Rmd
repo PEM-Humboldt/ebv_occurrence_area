@@ -1,0 +1,99 @@
+---
+title: "IAvH functions - redlist index"
+output:
+  html_document: default
+  pdf_document: default
+date: "2022-01-12"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# **species_list_function**
+
+## **Description**
+
+Function to organize the information of the list of species of interest and its threat category. The function check de species list, correct taxonomy, and resulting table shall be used as input for the estimation of the red list index.
+
+## **Usage**
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=T, results='hide'}
+
+species_list_function(table_input= NULL, method= c('global', 'country', 'user'),
+                      column_spp= NULL, category_column= NULL, year_columm= NULL,
+                      country= NULL, token_iucn= NULL)
+```
+
+## **Output - Value**
+
+Data.frame object. Table organized of interest species list and their red list assessment, with columns about scientific_name, category, and year.
+
+## **Input - Arguments**
+
+***table_input***: data.frame object. Is not taken into account when method is equal to 'country'.
+
+***method*****:** The method to use to organize the list of species. The 'user' method is organised on the basis of category_column and year_column information. While the 'global' and 'country' methods require the token_iucn argument to collect information from the IUCN API.
+
+***column_spp*****:** table_input column name referring to the scientific names of interest species list.
+
+***category_column*****:** table_input column name referring to the red list threat category of interest species list. Only taken into account when method is equal to 'user'.
+
+***year_columm*****:** table_input column name referring to the year of threat category assessment of interest species list. Only taken into account when method is equal to 'user'.
+
+***country***: isocode of two letters referring to country code of interest. The isocodes list is available in rredlist::rl_use_iucn(). For instance, the code for Colombia is 'CO'. Only taken into account when method is equal to 'country'.
+
+***token_iucn***: A token to be able to use the IUCN API. You can ask for the token on <https://apiv3.iucnredlist.org/api/v3/token>. Only taken into account when method is equal to 'global' or 'country'.
+
+# \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+# **validate_taxonomy_function**
+
+## **Description**
+
+Function to review scientific names of species of interest. Scriptural errors are reviewed. Below are reviewed taxonomic synonyms databases to assign the valid name of the species according to IUCN.
+
+## **Usage**
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=T, results='hide'}
+
+species_list_function(table_input= NULL,column_spp= NULL)
+```
+
+## **Output - Value**
+
+Data.frame object. Input table with new column 'valid_sp' referring to valid name of the species according to IUCN.
+
+## **Input - Arguments**
+
+***table_input***: data.frame object.
+
+***column_spp*****:** table_input column name referring to the scientific names of interest species list.\
+
+# 
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+# 
+
+# **calculate_RLI_function**
+
+## **Description**
+
+Function to estimate the red list index. The red list index is an indicator of trends of change of the risk of extinction of groups of species in n time.
+
+## **Usage**
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=T, results='hide'}
+
+calculate_RLI_function(table_assesment= table_assesment)
+```
+
+## **Output - Value**
+
+Data.frame object. Input table with new column 'valid_sp' referring to valid name of the species according to IUCN.
+
+## **Input - Arguments**
+
+***table_assesment***: data.frame object. Is expected to be used the table obtained from the output of species_list_function.
+
+***years*** **:** Time period for which to calculate the index.
